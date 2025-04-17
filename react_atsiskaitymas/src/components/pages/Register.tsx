@@ -10,7 +10,68 @@ import UsersContext from "../contexts/UsersContext";
 import { UsersContextTypes, User } from "../../types";
 
 const StyledSection = styled.section`
-    
+    color: #C68B59;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >form{
+        width: 30%;
+        background-color: #C68B59;
+        color: #FFF8F1;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        >div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px;
+            font-weight: 700;
+            border-radius: 10px;
+
+            >input{
+                background-color: #FFF8F1;
+                color: black;
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+            }
+            >span{
+                color: #A44A3F;
+                font-size: 12px;
+            }
+        }
+        >.button{
+            width: 100px;
+            margin-top: 15px;
+            padding: 5px 0;
+            border: 2px solid #FFF8F1;
+            border-radius: 15px;
+            align-self: center;
+            font-weight: 600;
+            background-color: #C68B59;
+            cursor: pointer;
+        }
+        >.button:hover{
+            background-color: #FFF8F1;
+            color: #C68B59;
+        }
+    }
+    >.signIn{
+        font-weight: 600;
+        >a{
+            color: #C68B59;
+        }
+        >a:hover{
+            color: #A44A3F;
+        }
+    }
+    >.message{
+        font-weight:600;
+    }    
 `
 
 const Register = () => {
