@@ -1,44 +1,53 @@
 {
-    "recipes": [
-        {
-            "id": "idk5623",
-            "title": "Kreminė vištiena su grybais",
-            "description": "Šis receptas tobulas vakarienei – švelni vištiena su grybų padažu patiekiama su ryžiais arba bulvių koše",
-            "image": "https://www.tv3.lt/System/static.php?f=/Uploads/UArticles/leadPhotos/76/81/7f/85/76817f854f65658e4b389778fd131213.jpg&m=3&s=755x416&t=cr&v=4.2.7.08",
-            "createdAt": "2025-04-15T18:34:00Z",
-            "authorId": "fldf896",
-            "saved": true
-        },
-        {
-            "id": "ndujes598",
-            "title": "Tom Yum sriuba",
-            "description": "Maistinga ir soti sriuba su krevetėmis, vištiena, makaronais ir kokosų pienu",
-            "image": "https://res.cloudinary.com/rimibaltic-web/image/upload/b_white,c_fill,f_auto,h_675,q_auto,w_1200/v2025041413/web-cms/R14732.jpg",
-            "createdAt": "2025-04-12T12:00:00Z",
-            "authorId": "fldf896",
-            "saved": true
-        },
-        {
-            "id": "cjkf896",
-            "title": "Tiramisu be kiaušinių",
-            "description": "Lengvesnis tiramisu variantas be žalių kiaušinių – naudojama maskarponė, grietinėlė ir kava su biskvitais",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcXN2-NrqQQgjkNLn0BiBpeFWJ99rKNhGZg&s",
-            "createdAt": "2025-04-10T15:20:00Z",
-            "authorId": "fldf896",
-            "saved": true
-        }
-    ],
-    "users": [
-      {
-        "id": "fldf896",
-        "email": "iveta.bruze@example.com",
-        "username": "IveBru",
-        "avatar": "",
-        "birthdate": "1997-03-26",
-        "password": "$2b$10$a.UMRs4ti27bv9IKlGOWzez9p3FNlmwTEkXC2YU1oLV2ySU5pDMsW",
-        "passwordText": "Sl@pta52",
-        "role": "user",
-        "savedRecipes": []
-      }
-    ]
+  "recipes": [
+    {
+      "id": "idk5623",
+      "title": "Kreminė vištiena su grybais",
+      "description": "Šis receptas tobulas vakarienei – švelni vištiena su grybų padažu patiekiama su ryžiais arba bulvių koše",
+      "image": "https://www.tv3.lt/System/static.php?f=/Uploads/UArticles/leadPhotos/76/81/7f/85/76817f854f65658e4b389778fd131213.jpg&m=3&s=755x416&t=cr&v=4.2.7.08",
+      "createdAt": "2025-04-15T18:34:00Z",
+      "authorId": "fldf896",
+      "saved": true
+    },
+    {
+      "id": "ndujes598",
+      "title": "Tom Yum sriuba",
+      "description": "Maistinga ir soti sriuba su krevetėmis, vištiena, makaronais ir kokosų pienu",
+      "image": "https://res.cloudinary.com/rimibaltic-web/image/upload/b_white,c_fill,f_auto,h_675,q_auto,w_1200/v2025041413/web-cms/R14732.jpg",
+      "createdAt": "2025-04-12T12:00:00Z",
+      "authorId": "fldf896",
+      "saved": true
+    },
+    {
+      "id": "cjkf896",
+      "title": "Tiramisu be kiaušinių",
+      "description": "Lengvesnis tiramisu variantas be žalių kiaušinių – naudojama maskarponė, grietinėlė ir kava su biskvitais",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcXN2-NrqQQgjkNLn0BiBpeFWJ99rKNhGZg&s",
+      "createdAt": "2025-04-10T15:20:00Z",
+      "authorId": "fldf896",
+      "saved": true
+    }
+  ],
+  "users": [
+    {
+      "id": "fldf896",
+      "email": "iveta.bruze@example.com",
+      "username": "IveBru",
+      "avatar": "",
+      "birthdate": "1997-03-26",
+      "password": "$2b$10$a.UMRs4ti27bv9IKlGOWzez9p3FNlmwTEkXC2YU1oLV2ySU5pDMsW",
+      "passwordText": "Sl@pta52",
+      "savedRecipes": []
+    },
+    {
+      "id": "29df3701-f500-48bf-b701-b33f491e2041",
+      "username": "VardenisP",
+      "email": "vardenisp@gmail.com",
+      "avatar": "",
+      "birthdate": "1998-04-18",
+      "password": "$2b$10$md./sKi8lgU.g8Cgjc1rQO31yQ2hRKA0sxDM69EQJfauM7dqcEdRe",
+      "passwordText": "Labas123!",
+      "savedRecipes": []
+    }
+  ]
 }

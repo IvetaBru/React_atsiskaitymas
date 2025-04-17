@@ -6,6 +6,8 @@ const reducer = (state: User[], action: UserActionTypes) => {
     switch(action.type){
         case 'setUsers':
           return action.data;
+        case "addUser":
+            return [...state, action.newUser];
         case 'saveRecipe':
             return state.map(el => {
                 if(el.id === action.userId){
@@ -45,6 +47,20 @@ const UsersProvider = ({ children }:ChildrenProp) => {
             data
         }))
     }, []);
+
+    const addNewUser = (newUser: User) => {
+        fetch(`http://localhost:8080/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(newUser)
+        });
+        dispatch({
+            type: 'addUser',
+            newUser
+        });
+    }
 
     const savedRecipes = (id: Recipe['id']) => {
         if(loggedInUser){
@@ -91,8 +107,10 @@ const UsersProvider = ({ children }:ChildrenProp) => {
         <UsersContext.Provider
             value={{
                 users,
+                dispatch,
                 loggedInUser,
                 setLoggedInUser,
+                addNewUser,
                 savedRecipes,
                 unsavedRecipes
             }}
