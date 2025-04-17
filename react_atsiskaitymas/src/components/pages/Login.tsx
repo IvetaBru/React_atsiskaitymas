@@ -91,7 +91,7 @@ const Login = () => {
         const foundUser = users.find(user => 
             user.email === values.email &&
             bcrypt.compareSync(values.password, user.password)
-      );
+        );
         if(foundUser){
             setMessage("✅ Successfully logged in! Redirecting to the home page...");
             localStorage.setItem("loggedInUser", JSON.stringify(foundUser));

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
@@ -78,6 +78,7 @@ const Register = () => {
 
     const { users, dispatch, addNewUser, setLoggedInUser } = useContext(UsersContext) as UsersContextTypes;
     const navigate = useNavigate();
+    const [message, setMessage] = useState('');
 
     type InitValues = Omit<User, 'id' | 'passwordText' | 'savedRecipes'> & { passwordRepeat: string };
 
@@ -111,7 +112,7 @@ const Register = () => {
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,25}$/,
                 'Password must include at least 1 uppercase, 1 lowercase, 1 digit, 1 special character, and be 8–25 characters long.'
             )
-            .required('This field is required.'),
+            .required('Field must be filled'),
         passwordRepeat: Yup.string()
             .oneOf([Yup.ref('password')], `Passwords don't match`)
             .required('Field must be filled'),
@@ -126,9 +127,10 @@ const Register = () => {
 
             if(emailExists || usernameExists){
                 formik.setErrors({
-                    ...(emailExists ? { email: 'This email already ecists'} : {}),
+                    ...(emailExists ? { email: 'This email already exists'} : {}),
                     ...(usernameExists ? { username: 'This username is already taken'} : {})
                 });
+                setMessage("❌ Registration failed. Please fix the errors above");
                 return;
             }
             const newUser: User = {
@@ -145,7 +147,11 @@ const Register = () => {
             dispatch({ type: "addUser", newUser });
             setLoggedInUser(newUser);
             localStorage.setItem("loggedInUser", JSON.stringify(newUser));
-            navigate("/");
+
+            setMessage("✅ Registration successful! Redirecting to the home page...");
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
         }
     })
 
@@ -246,7 +252,7 @@ const Register = () => {
                 <input type="submit" value="Login" className='button'/>
             </form>
             <p className="signIn">Already have an account? <Link to="/login">Sign in</Link> here!</p>  
-            {/* {message && <div className="message">{message}</div>}              */}
+            {message && <div className="message">{message}</div>}             
         </StyledSection>
      );
 }

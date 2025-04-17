@@ -48,6 +48,36 @@
       "password": "$2b$10$md./sKi8lgU.g8Cgjc1rQO31yQ2hRKA0sxDM69EQJfauM7dqcEdRe",
       "passwordText": "Labas123!",
       "savedRecipes": []
+    },
+    {
+      "id": "9e81663e-aad1-4a8b-9d48-e5169f7233d6",
+      "username": "vardenis_pardenis",
+      "email": "vardenispardenis@gmail.com",
+      "avatar": "",
+      "birthdate": "2002-03-07",
+      "password": "$2b$10$Mdsh1sDVNtCxtPz3ZUOyNOOJN2cHoYJ58pGBKztUcwgfmguVu.1bG",
+      "passwordText": "Labas123!",
+      "savedRecipes": []
+    },
+    {
+      "id": "f97a1039-b502-471c-af2e-b384fc4a1fbe",
+      "username": "Petras",
+      "email": "petraitis@gmail.com",
+      "avatar": "",
+      "birthdate": "1993-03-06",
+      "password": "$2b$10$2nPKwZBLTzZSUjawbYV9OuUd52UPeCHrlkjojXyJ6HR220X/Pgbrm",
+      "passwordText": "Labas123!",
+      "savedRecipes": []
+    },
+    {
+      "id": "7ec42f58-b60f-4a18-9de5-1efd6b7ecaac",
+      "username": "Antanas",
+      "email": "sampanas@yahoo.com",
+      "avatar": "",
+      "birthdate": "1990-02-15",
+      "password": "$2b$10$DeJi0YNiP3x3GiwgDqlTceM5t.rbL3Xg4dnb97OKZPzHWynHNScgK",
+      "passwordText": "Labas123!",
+      "savedRecipes": []
     }
   ]
 }
