@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useState, useContext} from "react";
 import { useNavigate, Link } from "react-router";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
@@ -69,10 +69,15 @@ const StyledSection = styled.section`
             color: #A44A3F;
         }
     }
+    >.message{
+        font-weight:600;
+    }
 `
 
 const Login = () => {
+   
     const { users, setLoggedInUser } = useContext(UsersContext) as UsersContextTypes;
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
     const initValues: Pick<User, 'email'|'password'> = {
@@ -88,9 +93,15 @@ const Login = () => {
             bcrypt.compareSync(values.password, user.password)
       );
         if(foundUser){
+            setMessage("✅ Successfully logged in! Redirecting to the home page...");
+            localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
             setLoggedInUser(foundUser);
-            navigate('/');
-      }
+            setTimeout(() => {
+                navigate('/');   
+            }, 2000);
+        }else{
+            setMessage("❌ Incorrect email or password!");           
+        }
     },
     validationSchema: Yup.object({
         email: Yup.string()
@@ -142,7 +153,8 @@ const Login = () => {
                 </div>
                 <input type="submit" value="Login" className='button'/>
             </form>
-            <p className="register">Don't have an account? <Link to="/register">Register</Link> here!</p>   
+            <p className="register">Don't have an account? <Link to="/register">Register</Link> here!</p>  
+            {message && <div className="message">{message}</div>} 
         </StyledSection>
      );
 }
