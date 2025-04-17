@@ -27,5 +27,18 @@
             "authorId": "fldf896",
             "saved": true
         }
+    ],
+    "users": [
+      {
+        "id": "fldf896",
+        "email": "iveta.bruze@example.com",
+        "username": "IveBru",
+        "avatar": "",
+        "birthdate": "1997-03-26",
+        "password": "$2b$10$a.UMRs4ti27bv9IKlGOWzez9p3FNlmwTEkXC2YU1oLV2ySU5pDMsW",
+        "passwordText": "Sl@pta52",
+        "role": "user",
+        "savedRecipes": []
+      }
     ]
 }

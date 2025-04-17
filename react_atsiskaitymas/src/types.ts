@@ -24,3 +24,26 @@ export type RecipesContextTypes = {
     saveOneRecipe: (id: Recipe["id"]) => void,
     findRecipe: (id: Recipe["id"]) => Recipe | string
 }
+export type User = {
+    id: string,
+    email: string,
+    username: string,
+    avatar: string,
+    birthdate: string,
+    password: string,
+    passwordText: string,
+    role: string,
+    savedRecipes: Recipe['id'][]
+}
+export type UserActionTypes = 
+{ type: 'setUsers', data: User[] } |
+{ type: 'saveRecipe', userId: User['id'], recipeId: Recipe['id']} |
+{ type: 'unsaveRecipe', userId: User['id'], recipeId: Recipe['id']} 
+
+export type UsersContextTypes = {
+    users: User[],
+    loggedInUser: User | null,
+    setLoggedInUser: React.Dispatch<React.SetStateAction<User | null>>,
+    savedRecipes: (id: Recipe["id"]) => void,
+    unsavedRecipes: (id: Recipe["id"]) => void
+}

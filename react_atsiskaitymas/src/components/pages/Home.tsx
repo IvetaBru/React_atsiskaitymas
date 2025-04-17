@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
+// import bcrypt from "bcryptjs";
 
 import RecipesContext from "../contexts/RecipesContext";
 import { RecipesContextTypes } from "../../types";
@@ -16,9 +17,10 @@ const StyledSection = styled.section`
 `
 
 const Home = () => {
-
+    
+    // console.log('Sl@pta52', bcrypt.hashSync('Sl@pta52'));
     const { recipes } = useContext(RecipesContext) as RecipesContextTypes;
-
+    
     return ( 
         <StyledSection>
             <h2>All recipes</h2>
