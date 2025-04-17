@@ -6,7 +6,8 @@
             "description": "Šis receptas tobulas vakarienei – švelni vištiena su grybų padažu patiekiama su ryžiais arba bulvių koše",
             "image": "https://www.tv3.lt/System/static.php?f=/Uploads/UArticles/leadPhotos/76/81/7f/85/76817f854f65658e4b389778fd131213.jpg&m=3&s=755x416&t=cr&v=4.2.7.08",
             "createdAt": "2025-04-15T18:34:00Z",
-            "authorId": "fldf896"
+            "authorId": "fldf896",
+            "saved": true
         },
         {
             "id": "ndujes598",
@@ -14,7 +15,8 @@
             "description": "Maistinga ir soti sriuba su krevetėmis, vištiena, makaronais ir kokosų pienu",
             "image": "https://res.cloudinary.com/rimibaltic-web/image/upload/b_white,c_fill,f_auto,h_675,q_auto,w_1200/v2025041413/web-cms/R14732.jpg",
             "createdAt": "2025-04-12T12:00:00Z",
-            "authorId": "fldf896"
+            "authorId": "fldf896",
+            "saved": true
         },
         {
             "id": "cjkf896",
@@ -22,7 +24,8 @@
             "description": "Lengvesnis tiramisu variantas be žalių kiaušinių – naudojama maskarponė, grietinėlė ir kava su biskvitais",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcXN2-NrqQQgjkNLn0BiBpeFWJ99rKNhGZg&s",
             "createdAt": "2025-04-10T15:20:00Z",
-            "authorId": "fldf896"
+            "authorId": "fldf896",
+            "saved": true
         }
     ]
 }
