@@ -1,6 +1,11 @@
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router';
+import { NavLink, Link, useNavigate } from 'react-router';
 import BakeryDiningIcon from '@mui/icons-material/BakeryDining';
+import UsersContext from '../../contexts/UsersContext';
+import { useContext } from 'react';
+import { UsersContextTypes } from '../../../types';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const StyledHeader = styled.header`
     height: 80px;
@@ -35,8 +40,14 @@ const StyledHeader = styled.header`
     }
     .login{
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 10px;
         >a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
             color: #FFF8F1;
             text-decoration: none;
             font-size: 15px;
@@ -49,28 +60,60 @@ const StyledHeader = styled.header`
             background-color:#FFF8F1;
             color: #C68B59;
         }
+        >.logout:hover{
+            cursor: pointer;
+            color: #A44A3F;
+        }
     }
 `
 
 const Header = () => {
+
+    const { loggedInUser, setLoggedInUser } = useContext(UsersContext) as UsersContextTypes;
+    const navigate = useNavigate();
+
     return ( 
         <StyledHeader>
             <div>
-                {/* <img src="https://www.pngfind.com/pngs/m/504-5046425_recipe-icon-png-transparent-background-recipe-clipart-black.png" alt="logo" /> */}
                 <BakeryDiningIcon className='krusenas'/>
             </div>
             <nav>
                 <ul>
-                    <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/add'>Add</NavLink></li>
+                    {
+                        loggedInUser ? (
+                        <>
+                            <li><NavLink to='/'>Home</NavLink></li>
+                            <li><NavLink to='/add'>Add</NavLink></li>
+                        </>
+                        ) : ( <li><NavLink to='/'>Home</NavLink></li>)
+                    }
                 </ul>
             </nav>
-            <div className='login'>
-                <Link to="/login">Login</Link>
-                <Link to="/register">Register</Link>
-            </div>       
+            {
+                loggedInUser ? (
+                    <div className='login'>
+                        <Link to='/user'>
+                            <AccountCircleIcon/>
+                            {loggedInUser.username}
+                        </Link>
+                        <LogoutIcon 
+                            onClick={() => {
+                            setLoggedInUser(null);
+                            localStorage.removeItem("loggedInUser");
+                            navigate("/");
+                            }}
+                            className='logout'
+                        />
+                    </div>
+                    ) : (
+                    <div className='login'>
+                        <Link to="/login">Login</Link>
+                        <Link to="/register">Register</Link>
+                    </div>
+                )
+            }
         </StyledHeader>
-     );
+    );
 }
  
 export default Header;
