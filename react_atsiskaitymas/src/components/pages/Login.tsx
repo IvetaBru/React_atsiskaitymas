@@ -4,14 +4,71 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import bcrypt from "bcryptjs";
 import styled from "styled-components";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import UsersContext from "../contexts/UsersContext";
 import { User, UsersContextTypes } from "../../types";
 
 const StyledSection = styled.section`
-    text-align: center;
-    color: black;
+    height: calc(100vh - 320px);
+    color: #C68B59;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >form{
+        width: 30%;
+        background-color: #C68B59;
+        color: #FFF8F1;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        >div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px;
+            font-weight: 700;
+            border-radius: 10px;
+
+            >input{
+                background-color: #FFF8F1;
+                color: black;
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+            }
+            >span{
+                color: #A44A3F;
+                font-size: 12px;
+            }
+        }
+        >.button{
+            width: 100px;
+            margin-top: 15px;
+            padding: 5px 0;
+            border: 2px solid #FFF8F1;
+            border-radius: 15px;
+            align-self: center;
+            font-weight: 600;
+            background-color: #C68B59;
+            cursor: pointer;
+        }
+        >.button:hover{
+            background-color: #FFF8F1;
+            color: #C68B59;
+        }
+    }
+    >.register{
+        font-weight: 600;
+        >a{
+            color: #C68B59;
+        }
+        >a:hover{
+            color: #A44A3F;
+        }
+    }
 `
 
 const Login = () => {
@@ -51,7 +108,6 @@ const Login = () => {
 
     return ( 
         <StyledSection>
-            <ArrowBackIcon onClick={()=> navigate(-1)}  className="back"/>
             <h2>Login</h2>
             <form onSubmit={formik.handleSubmit}>
                 <div>
@@ -66,7 +122,7 @@ const Login = () => {
                 />
                 {
                     formik.errors.email && formik.touched.email &&
-                    <p>{formik.errors.email}</p>
+                    <span>{formik.errors.email}</span>
                 }
                 </div>
                 <div>
@@ -81,12 +137,12 @@ const Login = () => {
                 />
                 {
                     formik.errors.password && formik.touched.password &&
-                    <p>{formik.errors.password}</p>
+                    <span>{formik.errors.password}</span>
                 }
                 </div>
                 <input type="submit" value="Login" className='button'/>
             </form>
-            <p>Don't have an account? <Link to="/register">Register</Link> here!</p>   
+            <p className="register">Don't have an account? <Link to="/register">Register</Link> here!</p>   
         </StyledSection>
      );
 }
