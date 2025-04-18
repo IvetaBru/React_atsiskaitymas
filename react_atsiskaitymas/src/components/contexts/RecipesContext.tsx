@@ -54,15 +54,6 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
         })
     }
 
-    const findRecipe = (id: Recipe['id']): Recipe | string => {
-        const foundRecipe = recipes.find(recipe => recipe.id === id);
-        if(foundRecipe){
-            return foundRecipe;
-        } else{
-            return 'Error: recipe not found';
-        }
-    }
-
     useEffect(() => {
         setIsLoading(true);
         fetch(`http://localhost:8080/recipes`)
@@ -84,7 +75,6 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
                 isLoading,
                 addNewRecipe,
                 removeOneRecipe,
-                findRecipe
             }}
         >
             { children }

@@ -21,7 +21,6 @@ export type RecipesContextTypes = {
     isLoading: boolean,
     addNewRecipe: (newRecipe: Recipe) => void,
     removeOneRecipe: (id: Recipe["id"]) => void,
-    findRecipe: (id: Recipe["id"]) => Recipe | string
 }
 export type User = {
     id: string,
