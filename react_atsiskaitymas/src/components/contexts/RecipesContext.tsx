@@ -11,18 +11,18 @@ const reducer = (state: Recipe[], action: ActionTypes) => {
             return [...state, action.newRecipe];
         case 'deleteRecipe':
             return state.filter(recipe => recipe.id !== action.id);
-        case 'saveRecipe':
-            return state.map(el => {
-                if(el.id === action.id){
-                  return {
-                    ...el,
-                    saved: !el.saved
-                  }
-                }else { return el }
-              })
-        // default:
-        //     console.error(`No such type ${action.type}`);
-        //     return state;
+        // case 'saveRecipe':
+        //     return state.map(el => {
+        //         if(el.id === action.id){
+        //           return {
+        //             ...el,
+        //             saved: !el.saved
+        //           }
+        //         }else { return el }
+        //       })
+        default:
+            console.error(`No such type ${action.type}`);
+            return state;
     }
 }
 
@@ -62,22 +62,22 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
         })
     }
 
-    const saveOneRecipe = (id: Recipe['id']) => {
-        const recipe = recipes.find(recipe => recipe.id === id); 
-        if (!recipe) return;
+    // const saveOneRecipe = (id: Recipe['id']) => {
+    //     const recipe = recipes.find(recipe => recipe.id === id); 
+    //     if (!recipe) return;
 
-        fetch(`http://localhost:8080/recipes/${id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({saved: !recipe.saved})
-        });
-        dispatch({
-            type:'saveRecipe',
-            id
-        });
-    }
+    //     fetch(`http://localhost:8080/recipes/${id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type":"application/json"
+    //         },
+    //         body: JSON.stringify({saved: !recipe.saved})
+    //     });
+    //     dispatch({
+    //         type:'saveRecipe',
+    //         id
+    //     });
+    // }
 
     const findRecipe = (id: Recipe['id']): Recipe | string => {
         const foundRecipe = recipes.find(recipe => recipe.id === id);
@@ -104,7 +104,7 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
                 dispatch,
                 addNewRecipe,
                 removeOneRecipe,
-                saveOneRecipe,
+                // saveOneRecipe,
                 findRecipe
             }}
         >

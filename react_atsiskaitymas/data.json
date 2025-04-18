@@ -2,21 +2,27 @@
   "recipes": [
     {
       "id": "ndujes598",
-      "title": "Tom Yum sriuba",
-      "description": "Maistinga ir soti sriuba su krevetėmis, vištiena, makaronais ir kokosų pienu",
+      "title": "Tom Yum soup",
+      "description": "Nutritious and filling soup with shrimp, chicken, noodles and coconut milk",
       "image": "https://res.cloudinary.com/rimibaltic-web/image/upload/b_white,c_fill,f_auto,h_675,q_auto,w_1200/v2025041413/web-cms/R14732.jpg",
       "createdAt": "2025-04-12T12:00:00Z",
-      "authorId": "fldf896",
-      "saved": true
+      "authorId": "fldf896"
     },
     {
       "id": "cjkf896",
-      "title": "Tiramisu be kiaušinių",
-      "description": "Lengvesnis tiramisu variantas be žalių kiaušinių – naudojama maskarponė, grietinėlė ir kava su biskvitais",
+      "title": "No eggs Tiramisu",
+      "description": "A lighter version of tiramisu without raw eggs - using mascarpone, cream and coffee with biscuits",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcXN2-NrqQQgjkNLn0BiBpeFWJ99rKNhGZg&s",
       "createdAt": "2025-04-10T15:20:00Z",
-      "authorId": "fldf896",
-      "saved": true
+      "authorId": "fldf896"
+    },
+    {
+      "id": "ef001835-09b1-491a-a397-ee9c13b12f1c",
+      "title": "Classic Chili soup",
+      "description": "This chili soup recipe is a classic Mexican and always a big hit with diners",
+      "image": "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/32488.jpg",
+      "createdAt": "2025-04-18T07:25:32.110Z",
+      "authorId": "29df3701-f500-48bf-b701-b33f491e2041"
     }
   ],
   "users": [

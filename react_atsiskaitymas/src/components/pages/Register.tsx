@@ -190,11 +190,11 @@ const Register = () => {
                 }
                 </div>
                 <div>
-                <label htmlFor="avatar">Avatar:</label>
+                <label htmlFor="avatar">Profile picture:</label>
                 <input
                     type="url"
                     id="avatar" name="avatar"
-                    placeholder="Add your avatar picture"
+                    placeholder="Add your profile picture"
                     value={formik.values.avatar}
                     onBlur={formik.handleBlur}
                     onChange={formik.handleChange}
