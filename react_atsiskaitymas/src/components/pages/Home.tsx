@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import styled from "styled-components";
-// import bcrypt from "bcryptjs";
 
 import RecipesContext from "../contexts/RecipesContext";
 import { RecipesContextTypes } from "../../types";
@@ -14,26 +13,40 @@ const StyledSection = styled.section`
         flex-wrap: wrap;
         gap: 10px;   
     }
+    .loading{
+        height: 100px;
+        width: 100px;
+    }
 `
 
 const Home = () => {
     
-    // console.log('Sl@pta52', bcrypt.hashSync('Sl@pta52'));
-    const { recipes } = useContext(RecipesContext) as RecipesContextTypes;
+    const { recipes, isLoading } = useContext(RecipesContext) as RecipesContextTypes;
+    const isEmpty = recipes.length === 0;
     
     return ( 
         <StyledSection>
             <h2>All recipes</h2>
             <div>
             {
-                recipes ?
-                recipes.map(recipe =>
-                <RecipeCard 
-                data={recipe}
-                key={recipe.id}
-                />
-                ) : 
-                <p>Loading...</p>
+                isLoading && (
+                    <div>
+                        <img src="https://i.gifer.com/ZZ5H.gif" alt="loading" className="loading"/>
+                    </div>
+                )
+            }
+            {
+                !isLoading && isEmpty && (
+                    <p>No recipes yet</p>
+                )
+            }
+            {
+                !isLoading && !isEmpty && recipes.map(recipe => (
+                    <RecipeCard 
+                    data={recipe}
+                    key={recipe.id}
+                    />
+                ))
             }
             </div>
         </StyledSection>

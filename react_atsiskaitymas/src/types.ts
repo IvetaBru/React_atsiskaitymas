@@ -18,9 +18,9 @@ export type ActionTypes =
 export type RecipesContextTypes = {
     recipes: Recipe[],
     dispatch: React.ActionDispatch<[action: ActionTypes]>,
+    isLoading: boolean,
     addNewRecipe: (newRecipe: Recipe) => void,
     removeOneRecipe: (id: Recipe["id"]) => void,
-    // saveOneRecipe: (id: Recipe["id"]) => void,
     findRecipe: (id: Recipe["id"]) => Recipe | string
 }
 export type User = {

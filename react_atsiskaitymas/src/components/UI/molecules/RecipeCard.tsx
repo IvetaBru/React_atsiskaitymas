@@ -14,7 +14,7 @@ type Props = {
 }
 
 const StyledCard = styled.div`
-    width: 430px;
+    width: 420px;
     height: 270px;
 
     display: flex;

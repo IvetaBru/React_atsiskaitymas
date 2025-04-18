@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
 import { Recipe, ChildrenProp, ActionTypes, RecipesContextTypes } from "../../types";
 import { useNavigate } from "react-router";
@@ -11,15 +11,6 @@ const reducer = (state: Recipe[], action: ActionTypes) => {
             return [...state, action.newRecipe];
         case 'deleteRecipe':
             return state.filter(recipe => recipe.id !== action.id);
-        // case 'saveRecipe':
-        //     return state.map(el => {
-        //         if(el.id === action.id){
-        //           return {
-        //             ...el,
-        //             saved: !el.saved
-        //           }
-        //         }else { return el }
-        //       })
         default:
             console.error(`No such type ${action.type}`);
             return state;
@@ -30,6 +21,7 @@ const RecipesContext = createContext<undefined | RecipesContextTypes>(undefined)
 const RecipesProvider = ({ children }: ChildrenProp) => {
 
     const [recipes, dispatch] = useReducer(reducer,[]);
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
     const addNewRecipe = (newRecipe: Recipe) => {
@@ -62,23 +54,6 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
         })
     }
 
-    // const saveOneRecipe = (id: Recipe['id']) => {
-    //     const recipe = recipes.find(recipe => recipe.id === id); 
-    //     if (!recipe) return;
-
-    //     fetch(`http://localhost:8080/recipes/${id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type":"application/json"
-    //         },
-    //         body: JSON.stringify({saved: !recipe.saved})
-    //     });
-    //     dispatch({
-    //         type:'saveRecipe',
-    //         id
-    //     });
-    // }
-
     const findRecipe = (id: Recipe['id']): Recipe | string => {
         const foundRecipe = recipes.find(recipe => recipe.id === id);
         if(foundRecipe){
@@ -89,12 +64,16 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
     }
 
     useEffect(() => {
+        setIsLoading(true);
         fetch(`http://localhost:8080/recipes`)
-        .then(res => res.json())
-        .then((data: Recipe[]) => dispatch({
-            type:'setData',
-            data
-        }));
+            .then(res => res.json())
+            .then((data: Recipe[]) => {
+                dispatch({
+                    type: 'setData',
+                    data
+                });
+                setIsLoading(false); 
+            });
     }, []);
 
     return(
@@ -102,9 +81,9 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
             value={{ 
                 recipes,
                 dispatch,
+                isLoading,
                 addNewRecipe,
                 removeOneRecipe,
-                // saveOneRecipe,
                 findRecipe
             }}
         >
