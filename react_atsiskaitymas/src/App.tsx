@@ -3,6 +3,7 @@ import MainOutlet from "./components/outlets/MainOutlet";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
+import UserPage from "./components/pages/UserPage";
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
           <Route index element={<Home />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
+          <Route path="/user" element={<UserPage />}/>
         </Route>
       </Routes>
     </>

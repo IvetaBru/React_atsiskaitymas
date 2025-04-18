@@ -64,9 +64,10 @@ const UsersProvider = ({ children }:ChildrenProp) => {
 
     const savedRecipes = (id: Recipe['id']) => {
         if(loggedInUser){
+            const updatedSaved = Array.from(new Set([...loggedInUser.savedRecipes, id]));
             setLoggedInUser({
                 ...loggedInUser,
-                savedRecipes: [...loggedInUser.savedRecipes, id]
+                savedRecipes: updatedSaved
             });
             dispatch({
                 type:'saveRecipe',
@@ -78,16 +79,17 @@ const UsersProvider = ({ children }:ChildrenProp) => {
                 headers: {
                     "Content-Type":"application/json"
                 },
-                body: JSON.stringify({ savedRecipes: [...loggedInUser.savedRecipes, id] })
+                body: JSON.stringify({ savedRecipes: updatedSaved })
             })
         }
     }
 
     const unsavedRecipes = (id: Recipe['id']) => {
         if(loggedInUser){
+            const updatedSaved = loggedInUser.savedRecipes.filter(rcpId => rcpId !== id);
             setLoggedInUser({
                 ...loggedInUser,
-                savedRecipes: loggedInUser.savedRecipes.filter(rcpId => rcpId !== id)
+                savedRecipes: updatedSaved
             });
             dispatch({
                 type:'unsaveRecipe',
@@ -99,7 +101,7 @@ const UsersProvider = ({ children }:ChildrenProp) => {
                 headers: {
                     "Content-Type":"application/json"
                 },
-                body: JSON.stringify({ savedRecipes: loggedInUser.savedRecipes.filter(rcpId => rcpId !== id) })
+                body: JSON.stringify({ savedRecipes: updatedSaved })
             })
         }
     }
