@@ -103,6 +103,7 @@ const UsersProvider = ({ children }:ChildrenProp) => {
                 },
                 body: JSON.stringify({ savedRecipes: updatedSaved })
             })
+            .then(res => res.json())
         }
     }
     return(

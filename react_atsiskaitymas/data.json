@@ -23,6 +23,30 @@
       "image": "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/32488.jpg",
       "createdAt": "2025-04-18T07:25:32.110Z",
       "authorId": "29df3701-f500-48bf-b701-b33f491e2041"
+    },
+    {
+      "id": "a588ae03-29df-494e-82b6-09a486642b7f",
+      "title": "Quick Ramen Salad",
+      "description": "Ramen in a different way - in the form of a hearty salad! We share this recipe as a basic one, and you can feel free to adjust it to your taste or the contents of your fridge!",
+      "image": "https://www.lamaistas.lt/uploads/modules/recipes/thumb920x573/34757.jpg",
+      "createdAt": "2025-04-18T07:58:01.886Z",
+      "authorId": "479ddd1b-0243-4dd5-b029-685e1a414920"
+    },
+    {
+      "id": "973a3c08-e0e6-49d4-99c1-b24ddb6500c5",
+      "title": "Homemade Italian pizza",
+      "description": "This recipe will make a great classic Italian Margherita pizza",
+      "image": "https://uk.ooni.com/cdn/shop/articles/20220211142645-margherita-9920_e41233d5-dcec-461c-b07e-03245f031dfe.jpg",
+      "createdAt": "2025-04-18T08:06:14.789Z",
+      "authorId": "479ddd1b-0243-4dd5-b029-685e1a414920"
+    },
+    {
+      "id": "49f66a5b-5357-4fc5-9c44-48212eaba91c",
+      "title": "Waffles with frozen berry filling",
+      "description": "Waffles with cheesecake and berry filling - perfect for both breakfast and dessert",
+      "image": "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/51947.jpg",
+      "createdAt": "2025-04-18T08:10:12.042Z",
+      "authorId": "b7b21a2a-b87c-47a4-a9a9-fa2a71cd6e4d"
     }
   ],
   "users": [
@@ -49,38 +73,30 @@
       "password": "$2b$10$md./sKi8lgU.g8Cgjc1rQO31yQ2hRKA0sxDM69EQJfauM7dqcEdRe",
       "passwordText": "Labas123!",
       "savedRecipes": [
-        "ndujes598",
         "idk5623",
-        "cjkf896"
+        "cjkf896",
+        "ndujes598"
       ]
     },
     {
-      "id": "9e81663e-aad1-4a8b-9d48-e5169f7233d6",
-      "username": "vardenis_pardenis",
-      "email": "vardenispardenis@gmail.com",
+      "id": "479ddd1b-0243-4dd5-b029-685e1a414920",
+      "username": "John Doe",
+      "email": "johndoe@gmail.com",
       "avatar": "",
-      "birthdate": "2002-03-07",
-      "password": "$2b$10$Mdsh1sDVNtCxtPz3ZUOyNOOJN2cHoYJ58pGBKztUcwgfmguVu.1bG",
+      "birthdate": "1986-06-06",
+      "password": "$2b$10$9UXEhIy0XKJTRejtbRxV3.RGLpuOhAMWMbx2K/7osdOOq2jGlSkUe",
       "passwordText": "Labas123!",
-      "savedRecipes": []
+      "savedRecipes": [
+        "ndujes598"
+      ]
     },
     {
-      "id": "f97a1039-b502-471c-af2e-b384fc4a1fbe",
-      "username": "Petras",
-      "email": "petraitis@gmail.com",
+      "id": "b7b21a2a-b87c-47a4-a9a9-fa2a71cd6e4d",
+      "username": "JaneD",
+      "email": "janedoe@gmail.com",
       "avatar": "",
-      "birthdate": "1993-03-06",
-      "password": "$2b$10$2nPKwZBLTzZSUjawbYV9OuUd52UPeCHrlkjojXyJ6HR220X/Pgbrm",
-      "passwordText": "Labas123!",
-      "savedRecipes": []
-    },
-    {
-      "id": "7ec42f58-b60f-4a18-9de5-1efd6b7ecaac",
-      "username": "Antanas",
-      "email": "sampanas@yahoo.com",
-      "avatar": "",
-      "birthdate": "1990-02-15",
-      "password": "$2b$10$DeJi0YNiP3x3GiwgDqlTceM5t.rbL3Xg4dnb97OKZPzHWynHNScgK",
+      "birthdate": "2000-02-23",
+      "password": "$2b$10$y18AVZuJFRT3VJGqhVB6sugeN1m5kC1CV67pU3qmLfFhaN0I9cs5S",
       "passwordText": "Labas123!",
       "savedRecipes": []
     }

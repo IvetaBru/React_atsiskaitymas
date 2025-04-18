@@ -15,7 +15,7 @@ type Props = {
 
 const StyledCard = styled.div`
     width: 430px;
-    height: 250px;
+    height: 270px;
 
     display: flex;
     justify-content: space-between;
