@@ -7,7 +7,14 @@ import { UsersContextTypes, RecipesContextTypes } from "../../types";
 import RecipeCard from "../UI/molecules/RecipeCard";
 
 const StyledSection = styled.section`
+    height: calc(100vh - 80px - 260px);
     color: #C68B59;
+
+    >div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;   
+    }
 `
 
 const UserPage = () => {
@@ -22,13 +29,15 @@ const UserPage = () => {
     return ( 
         <StyledSection>
             <h2>Saved recipes</h2>
-            {
-            saved.length ? (
-                saved.map((recipe) => (
-                    <RecipeCard key={recipe.id} data={recipe} />
-                ))
-            ) : (<p>No saved recipes yet</p>)
-            }
+            <div>
+                {
+                saved.length ? (
+                    saved.map((recipe) => (
+                        <RecipeCard key={recipe.id} data={recipe} />
+                    ))
+                ) : (<p>No saved recipes yet</p>)
+                }
+            </div>
         </StyledSection>
      );
 }
