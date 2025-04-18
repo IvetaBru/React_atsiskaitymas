@@ -1,15 +1,6 @@
 {
   "recipes": [
     {
-      "id": "idk5623",
-      "title": "Kreminė vištiena su grybais",
-      "description": "Šis receptas tobulas vakarienei – švelni vištiena su grybų padažu patiekiama su ryžiais arba bulvių koše",
-      "image": "https://www.tv3.lt/System/static.php?f=/Uploads/UArticles/leadPhotos/76/81/7f/85/76817f854f65658e4b389778fd131213.jpg&m=3&s=755x416&t=cr&v=4.2.7.08",
-      "createdAt": "2025-04-15T18:34:00Z",
-      "authorId": "fldf896",
-      "saved": true
-    },
-    {
       "id": "ndujes598",
       "title": "Tom Yum sriuba",
       "description": "Maistinga ir soti sriuba su krevetėmis, vištiena, makaronais ir kokosų pienu",
@@ -32,7 +23,7 @@
     {
       "id": "fldf896",
       "email": "iveta.bruze@example.com",
-      "username": "IveBru",
+      "username": "IvetaBru",
       "avatar": "",
       "birthdate": "1997-03-26",
       "password": "$2b$10$a.UMRs4ti27bv9IKlGOWzez9p3FNlmwTEkXC2YU1oLV2ySU5pDMsW",

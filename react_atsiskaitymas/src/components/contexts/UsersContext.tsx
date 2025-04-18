@@ -6,7 +6,7 @@ const reducer = (state: User[], action: UserActionTypes) => {
     switch(action.type){
         case 'setUsers':
           return action.data;
-        case "addUser":
+        case 'addUser':
             return [...state, action.newUser];
         case 'saveRecipe':
             return state.map(el => {

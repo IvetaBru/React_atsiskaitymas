@@ -47,6 +47,9 @@ const RecipesProvider = ({ children }: ChildrenProp) => {
     }
 
     const removeOneRecipe = (id: Recipe['id']) => {
+        const confirm = window.confirm("Do you want to delete it?");
+        if (!confirm) return;
+
         fetch(`http://localhost:8080/recipes/${id}`, {
             method: "DELETE"
         })

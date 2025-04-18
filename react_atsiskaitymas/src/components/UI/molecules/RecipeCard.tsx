@@ -4,9 +4,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { Recipe, UsersContextTypes } from "../../../types";
+import { Recipe, RecipesContextTypes, UsersContextTypes } from "../../../types";
 import UsersContext from "../../contexts/UsersContext";
 import { useContext } from "react";
+import RecipesContext from "../../contexts/RecipesContext";
 
 type Props = {
     data: Recipe
@@ -47,6 +48,7 @@ const StyledCard = styled.div`
                 display: flex;
                 align-items: center;
                 gap: 5px;
+                font-weight: 600;
             }
             >span:last-child{
                 >button{
@@ -75,9 +77,12 @@ const StyledCard = styled.div`
 
 const RecipeCard = ({ data }: Props) => {
 
-    const { loggedInUser, savedRecipes, unsavedRecipes } = useContext(UsersContext) as UsersContextTypes;
+    const { users, loggedInUser, savedRecipes, unsavedRecipes } = useContext(UsersContext) as UsersContextTypes;
+    const { removeOneRecipe } = useContext(RecipesContext) as RecipesContextTypes;
 
+    const author = users.find(user => user.id === data.authorId);
     const isSaved = loggedInUser?.savedRecipes.includes(data.id);
+    const isAuthor = loggedInUser?.id === data.authorId;
 
     const handleToggleSave = () => {
         if(!loggedInUser) return;
@@ -86,6 +91,10 @@ const RecipeCard = ({ data }: Props) => {
         }else{
             savedRecipes(data.id);
         }
+    }
+
+    const handleDelete = () => {
+        removeOneRecipe(data.id)
     }
     
     return ( 
@@ -96,14 +105,24 @@ const RecipeCard = ({ data }: Props) => {
             />
             <div className="info">
                 <div className="userPart">
-                    <span><AccountCircleIcon />Name</span>
+                    <span><AccountCircleIcon /> {author?.username}</span>
                     <span>
-                        <button>
-                        <DeleteIcon />
-                        </button>
+                        {
+                            isAuthor && (
+                            <button onClick={handleDelete}>
+                                <DeleteIcon />
+                            </button>
+                            )
+                        }
                         <button onClick={handleToggleSave}>
                             {
-                                isSaved ? <FavoriteIcon className="reaHeart"/> : <FavoriteBorderIcon />
+                                loggedInUser ? (
+                                isSaved ? (
+                                    <FavoriteIcon className="reaHeart" />
+                                ) : (
+                                    <FavoriteBorderIcon />
+                                )
+                            ) : null
                             }
                         </button>
                     </span>
